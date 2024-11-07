@@ -6,6 +6,7 @@ import { store } from './store'
 import { GlobalStyle } from './styles'
 
 export type Produto = {
+  estaNosFavoritos: boolean
   id: number
   nome: string
   preco: number
