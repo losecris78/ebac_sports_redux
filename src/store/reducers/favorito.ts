@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Produto } from '../../App'
+import ProdutoI from '../../components/Produto'
 
 type FavoritoState = {
   items: Produto[]
@@ -16,8 +17,10 @@ const favoritoSlice = createSlice({
       const productoPayload = action.payload
       if (state.items.find((Produto) => Produto.id === productoPayload.id)) {
         state.items.pop()
+        ProdutoI.arguments.estaNosFavoritos == false
       } else {
         state.items.push(productoPayload)
+        ProdutoI.arguments.estaNosFavoritos == true
       }
     }
   }
