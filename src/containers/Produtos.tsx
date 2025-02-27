@@ -10,11 +10,7 @@ const Produtos = () => {
     <>
       <S.Produtos>
         {produtos?.map((produto) => (
-          <Produto
-            key={produto.id}
-            estaNosFavoritos={produto.estaNosFavoritos}
-            produto={produto}
-          />
+          <Produto key={produto.id} produto={produto} />
         ))}
       </S.Produtos>
     </>

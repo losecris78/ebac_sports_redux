@@ -16,11 +16,12 @@ const favoritoSlice = createSlice({
     favoritar: (state, action: PayloadAction<Produto>) => {
       const productoPayload = action.payload
       if (state.items.find((Produto) => Produto.id === productoPayload.id)) {
-        state.items.pop()
-        ProdutoI.arguments.estaNosFavoritos == false
+        const newFavorite = state.items.filter(
+          (p) => productoPayload.id !== p.id
+        )
+        state.items = newFavorite
       } else {
         state.items.push(productoPayload)
-        ProdutoI.arguments.estaNosFavoritos == true
       }
     }
   }
